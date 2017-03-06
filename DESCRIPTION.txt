@@ -1,0 +1,63 @@
+** Description of Simulation Infrastructure **
+
+For CRC-2, we provide simulation framework based on ChampSim simulator. The
+framework models a detailed out-of-order core with the following parameters:
+
+* 256-entry reorder buffer with no scheduling restrictions (i.e., any
+  instruction that is ready in the scheduler window can be scheduled
+  out-of-order).
+
+* Processor has a 6-wide pipeline. A maximum of two loads and a maximum of one
+  store can be issued every cycle.
+
+* Simple gshare branch predictor 
+
+* Cache hierarchy models
+  - ITLB and DTLB: 16-set, 8-way, 4KB
+  - Second-level TLB: 128-set, 12-way, 96KB
+  - Private L1 instruction/data cache: 64-set, 8-way, 32KB
+  - Private L2 cache (unified): 512-set, 8-way, 256KB
+  - Shared LLC: 2048-set, 16-way, 2MB for single core 
+                8192-set, 16-way, 8MB for 4-core
+  - Cache hierarchy is non-inclusive and the baseline replacement policy is LRU
+
+* All caches use writeback + write-allocate policy for dirty blocks. 
+  Writeback bypassing is not allowed.
+
+* All instructions have one-cycle latency except for memory accesses. L1 cache
+  hits have a 4 cycle latency. L2 cache hits have an additional 8 cycle latency.
+  L3 cache hits have an additional 20 cycle latency. Note that during the
+  warmup, all cache latency is set to 1 cycle to accelerate the warmup process.
+
+* Data prefetcher
+  - L1 next-line prefetcher
+  - L2 PC-based stride prefetcher
+  - Prefetches are issued for whole cache blocks
+  - The prefetcher is invoked only on demand requests, after its L1/L2 access
+    latency, and after it has been determined to be a cache hit or miss.
+
+* Each cache has a read queue for storing outstanding requests to that cache.
+  The L1 read queue is processed at a maximum rate of 2 reads/cycle. The L2 and
+  L3 read queues are processed at a maximum rate of 1 read/cycle. Prefetch
+  requests are stored in a separate prefetch queue. A demand request waiting in
+  the read queue has higher priority over the prefetch requests. Within the queue,
+  each request is processed in FIFO order.
+
+* The main memory is modeled in some detail (data bus contention, bank
+  contention, write-to-read bus turnaround delays, and more). Singe-core
+  configuration uses one 64-bit channel of memory and multi-core configuration
+  uses two 64-bit channels.
+
+* The main memory read queue can be processed out of order, according to a
+  modified Open Row FR-FCFS policy. The DRAM core access latency for row hits is
+  approximately 13.5ns, and for row misses is approximately 40.5ns. Many other
+  timing constraints, such as tFAW and DRAM refresh, are not modeled.
+
+* There are limited numbers of MSHRs tracking cache misses. If the MSHRs are all
+  full, all further misses at that level will be stalled until a request
+  tracking register is freed.
+
+* Following functions can be used to get 
+  - get_cycle_count(): Global clock cycle count
+  - get_instr_count(uint32_t cpu): Number of instructions executed in this cpu
+  - get_config_number(): Current configuration number (config1 ~ 6)

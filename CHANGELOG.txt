@@ -1,0 +1,8 @@
+* Date: Tue Feb 10, 2017 (ChampSim_CRC2_ver1.2.tar.gz)
+  Fixed trace generator
+
+* Date: Tue Feb  8, 2017 (ChampSim_CRC2_ver1.1.tar.gz)
+  Fixed compilation issue on Ubuntu 16.10 with gcc 6.2 
+
+* Date: Mon Feb  7, 2017 (ChampSim_CRC2.tar.gz)
+  Initial release of ChampSim_CRC2 
