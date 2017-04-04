@@ -58,7 +58,7 @@ void InitReplacementState(),
      PrintStats();
 
 uint32_t GetVictimInSet(uint32_t cpu, uint32_t set, const BLOCK *current_set, uint64_t PC, uint64_t paddr, uint32_t type);
-uint64_t get_cycle_count(), 
+uint64_t get_cycle_count(),
          get_instr_count(uint32_t cpu),
          get_config_number();
 

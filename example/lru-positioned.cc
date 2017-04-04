@@ -1,28 +1,30 @@
 ////////////////////////////////////////////
 //                                        //
-//     SRRIP [Jaleel et al. ISCA' 10]     //
+//        LRU replacement policy          //
 //     Jinchun Kim, cienlux@tamu.edu      //
 //                                        //
 ////////////////////////////////////////////
-//
+
 #include "../inc/champsim_crc2.h"
 
 #define NUM_CORE 1
 #define LLC_SETS NUM_CORE*2048
 #define LLC_WAYS 16
+#define EPOCH_SIZE 1024 //TODO: Parameter Tuning
 
-#define maxRRPV 3
-uint32_t rrpv[LLC_SETS][LLC_WAYS];
-uint32_t NUM_FILLS=0;
-uint32_t NUM_HITS=0;
+uint32_t lru[LLC_SETS][LLC_WAYS];
+uint64_t sig[LLC_SETS][LLC_WAYS];
+
+
+class
 // initialize replacement state
 void InitReplacementState()
 {
-    cout << "Initialize SRRIP state" << endl;
-
+    cout << "Initialize LRU replacement state" << endl;
+//	cout << "Set \t PC \t PAddr \t Type" << endl;
     for (int i=0; i<LLC_SETS; i++) {
         for (int j=0; j<LLC_WAYS; j++) {
-            rrpv[i][j] = maxRRPV;
+            lru[i][j] = j;
         }
     }
 }
@@ -31,33 +33,34 @@ void InitReplacementState()
 // return value should be 0 ~ 15 or 16 (bypass)
 uint32_t GetVictimInSet (uint32_t cpu, uint32_t set, const BLOCK *current_set, uint64_t PC, uint64_t paddr, uint32_t type)
 {
-    // look for the maxRRPV line
-    while (1)
-    {
-        for (int i=0; i<LLC_WAYS; i++)
-            if (rrpv[set][i] == maxRRPV)
-                return i;
+  cout<< "cpu\t"<<cpu<<"\tset\t"<< set <<"\tpaddr\t"<<paddr<<"\tPC\t"<<PC<<"\ttype\t"<<type<<endl;
+    for (int i=0; i<LLC_WAYS; i++)
+        if (lru[set][i] == (LLC_WAYS-1))
+            return i;
 
-        for (int i=0; i<LLC_WAYS; i++)
-            rrpv[set][i]++;
-    }
-
-    // WE SHOULD NOT REACH HERE
-    assert(0);
     return 0;
 }
 
 // called on every cache hit and cache fill
 void UpdateReplacementState (uint32_t cpu, uint32_t set, uint32_t way, uint64_t paddr, uint64_t PC, uint64_t victim_addr, uint32_t type, uint8_t hit)
 {
-    if (hit){
-      rrpv[set][way] = 0;NUM_HITS++;
+//	cout<< "cpu\t"<<cpu<<"\tset\t"<< set <<"\tway\t"<< way <<"\tpaddr\t"<<paddr<<"\tPC\t"<<PC<< "\tvictim_addr\t"<< victim_addr << "\ttype\t"<<type<<"\thit\t"<<(int)hit<<endl;
+    // update lru replacement state
+    if(hit){
+      HITS++;
     }
     else{
-      rrpv[set][way] = maxRRPV-1;NUM_FILLS++;
+      FILLS++;
     }
+    for (uint32_t i=0; i<LLC_WAYS; i++) {
+        if (lru[set][i] < lru[set][way]) {
+            lru[set][i]++;
 
-    std::cout << "NUM_FILLS: " << NUM_FILLS<<" NUM_HITS: "<<NUM_HITS<<'\n';
+            if (lru[set][i] == LLC_WAYS)
+                assert(0);
+        }
+    }
+    lru[set][way] = 0; // promote to the MRU position
 }
 
 // use this function to print out your own stats on every heartbeat
