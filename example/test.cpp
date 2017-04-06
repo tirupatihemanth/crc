@@ -12,7 +12,9 @@ int main(){
 	map<int, int> mymap;
 	mymap[1] = 2;
 	mymap[2] = 3;
-	if(mymap[3] == NULL){
+	mymap[3]= mymap[3]+2;	
+	cout<<"mymap[3]: "<< mymap[3]<<endl;
+	if(mymap[3] == 0){
 		cout<<"Gotcha"<<endl;
 	}
 	if(rand()%1==0){

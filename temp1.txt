@@ -1,0 +1,812 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 100000
+Simulation Instructions: 10000000
+Configuration: 1
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Channels: 1 Width: 64-bit Data Rate: 1600 MT/s
+
+CPU 0 runs trace/bzip2_10M.trace.gz
+Initialize SRRIP state
+
+Warmup complete CPU 0 instructions: 100001 cycles: 45342 (Simulation time: 0 hr 0 min 0 sec) 
+
+SIG: 4205221 hits: 0 fills: 25 hits/fills: 0
+SIG: 4205225 hits: 0 fills: 5 hits/fills: 0
+SIG: 4205231 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205234 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205247 hits: 0 fills: 8 hits/fills: 0
+SIG: 4205264 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205268 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205281 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205298 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205311 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205315 hits: 0 fills: 6 hits/fills: 0
+SIG: 4205319 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205336 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205349 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205366 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205370 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205380 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205387 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205391 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205408 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205412 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205429 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205433 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205443 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205460 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205465 hits: 0 fills: 3 hits/fills: 0
+SIG: 4205475 hits: 0 fills: 77 hits/fills: 0
+SIG: 4205480 hits: 0 fills: 42 hits/fills: 0
+SIG: 4205499 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205504 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205514 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205519 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205569 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205789 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207217 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207237 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207242 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207298 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207377 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207424 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207450 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207456 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207464 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207470 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207472 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207477 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207488 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207552 hits: 0 fills: 83 hits/fills: 0
+SIG: 4207559 hits: 0 fills: 1139 hits/fills: 0
+SIG: 4207602 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207646 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207676 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207683 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207695 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207752 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207812 hits: 0 fills: 47 hits/fills: 0
+SIG: 4207818 hits: 0 fills: 511 hits/fills: 0
+SIG: 4207854 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207875 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208010 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208019 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208112 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208128 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208196 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208304 hits: 0 fills: 2 hits/fills: 0
+SIG: 4208312 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208378 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208382 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208387 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208427 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208479 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208514 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208554 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208576 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208645 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208673 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208714 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209424 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209472 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209536 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209603 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209666 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209731 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209792 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209859 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209924 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209986 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210085 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210115 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210178 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210245 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210306 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210389 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210435 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210619 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210627 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210642 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210688 hits: 0 fills: 1 hits/fills: 0
+FILLS: 2048 HITS: 0
+HITS/FILLS STATS: MAP_SIZE: 1
+0 98
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 1000002 cycles: 1565083 heartbeat IPC: 0.638945 cumulative IPC: 0.592207 (Simulation time: 0 hr 0 min 3 sec) 
+SIG: 4205221 hits: 3 fills: 13 hits/fills: 0
+SIG: 4205225 hits: 1 fills: 4 hits/fills: 0
+SIG: 4205247 hits: 0 fills: 14 hits/fills: 0
+SIG: 4205251 hits: 0 fills: 9 hits/fills: 0
+SIG: 4205264 hits: 0 fills: 11 hits/fills: 0
+SIG: 4205268 hits: 1 fills: 4 hits/fills: 0
+SIG: 4205281 hits: 0 fills: 13 hits/fills: 0
+SIG: 4205285 hits: 0 fills: 7 hits/fills: 0
+SIG: 4205298 hits: 0 fills: 3 hits/fills: 0
+SIG: 4205302 hits: 0 fills: 6 hits/fills: 0
+SIG: 4205315 hits: 1 fills: 7 hits/fills: 0
+SIG: 4205319 hits: 0 fills: 6 hits/fills: 0
+SIG: 4205332 hits: 0 fills: 11 hits/fills: 0
+SIG: 4205336 hits: 0 fills: 6 hits/fills: 0
+SIG: 4205349 hits: 0 fills: 7 hits/fills: 0
+SIG: 4205353 hits: 0 fills: 5 hits/fills: 0
+SIG: 4205366 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205370 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205387 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205391 hits: 0 fills: 3 hits/fills: 0
+SIG: 4205408 hits: 0 fills: 3 hits/fills: 0
+SIG: 4205412 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205429 hits: 0 fills: 4 hits/fills: 0
+SIG: 4205460 hits: 0 fills: 5 hits/fills: 0
+SIG: 4205475 hits: 3 fills: 347 hits/fills: 0
+SIG: 4205480 hits: 5 fills: 241 hits/fills: 0
+SIG: 4205499 hits: 0 fills: 5 hits/fills: 0
+SIG: 4205504 hits: 0 fills: 3 hits/fills: 0
+SIG: 4205514 hits: 0 fills: 6 hits/fills: 0
+SIG: 4205519 hits: 0 fills: 6 hits/fills: 0
+SIG: 4205553 hits: 1 fills: 5 hits/fills: 0
+SIG: 4205558 hits: 0 fills: 3 hits/fills: 0
+SIG: 4205577 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205582 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205592 hits: 0 fills: 5 hits/fills: 0
+SIG: 4205597 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205631 hits: 0 fills: 4 hits/fills: 0
+SIG: 4205636 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205655 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205671 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205697 hits: 0 fills: 5 hits/fills: 0
+SIG: 4207242 hits: 3 fills: 4 hits/fills: 0
+SIG: 4207450 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207456 hits: 0 fills: 6 hits/fills: 0
+SIG: 4207464 hits: 1 fills: 1 hits/fills: 1
+SIG: 4207470 hits: 1 fills: 1 hits/fills: 1
+SIG: 4207472 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207552 hits: 5 fills: 58 hits/fills: 0
+SIG: 4207559 hits: 193 fills: 838 hits/fills: 0
+SIG: 4207812 hits: 61 fills: 24 hits/fills: 2
+SIG: 4207818 hits: 90 fills: 325 hits/fills: 0
+SIG: 4208122 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208179 hits: 0 fills: 1 hits/fills: 0
+FILLS: 2048 HITS: 369
+HITS/FILLS STATS: MAP_SIZE: 3
+0 50
+1 2
+2 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4205221 hits: 6 fills: 7 hits/fills: 0
+SIG: 4205225 hits: 1 fills: 4 hits/fills: 0
+SIG: 4205247 hits: 0 fills: 6 hits/fills: 0
+SIG: 4205251 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205264 hits: 1 fills: 14 hits/fills: 0
+SIG: 4205268 hits: 0 fills: 12 hits/fills: 0
+SIG: 4205281 hits: 0 fills: 5 hits/fills: 0
+SIG: 4205285 hits: 0 fills: 4 hits/fills: 0
+SIG: 4205298 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205302 hits: 0 fills: 4 hits/fills: 0
+SIG: 4205315 hits: 1 fills: 1 hits/fills: 1
+SIG: 4205319 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205332 hits: 2 fills: 4 hits/fills: 0
+SIG: 4205336 hits: 1 fills: 3 hits/fills: 0
+SIG: 4205349 hits: 1 fills: 2 hits/fills: 0
+SIG: 4205353 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205366 hits: 0 fills: 3 hits/fills: 0
+SIG: 4205370 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205387 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205391 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205408 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205412 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205429 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205475 hits: 14 fills: 193 hits/fills: 0
+SIG: 4205480 hits: 10 fills: 139 hits/fills: 0
+SIG: 4205499 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205514 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205519 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205553 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205558 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205592 hits: 0 fills: 4 hits/fills: 0
+SIG: 4205666 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207450 hits: 1 fills: 2 hits/fills: 0
+SIG: 4207456 hits: 1 fills: 3 hits/fills: 0
+SIG: 4207464 hits: 1 fills: 2 hits/fills: 0
+SIG: 4207470 hits: 2 fills: 2 hits/fills: 1
+SIG: 4207472 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207477 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207552 hits: 39 fills: 28 hits/fills: 1
+SIG: 4207559 hits: 189 fills: 360 hits/fills: 0
+SIG: 4207812 hits: 41 fills: 100 hits/fills: 0
+SIG: 4207818 hits: 92 fills: 1119 hits/fills: 0
+SIG: 4208673 hits: 1 fills: 0 hits/fills: 2
+FILLS: 2048 HITS: 404
+HITS/FILLS STATS: MAP_SIZE: 3
+0 39
+1 3
+2 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 2000001 cycles: 3243549 heartbeat IPC: 0.595782 cumulative IPC: 0.594083 (Simulation time: 0 hr 0 min 6 sec) 
+SIG: 4205221 hits: 19 fills: 6 hits/fills: 2
+SIG: 4205225 hits: 6 fills: 4 hits/fills: 1
+SIG: 4205247 hits: 7 fills: 5 hits/fills: 1
+SIG: 4205251 hits: 1 fills: 3 hits/fills: 0
+SIG: 4205264 hits: 5 fills: 5 hits/fills: 1
+SIG: 4205268 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205281 hits: 6 fills: 4 hits/fills: 1
+SIG: 4205285 hits: 2 fills: 3 hits/fills: 0
+SIG: 4205298 hits: 1 fills: 2 hits/fills: 0
+SIG: 4205302 hits: 0 fills: 2 hits/fills: 0
+SIG: 4205315 hits: 9 fills: 4 hits/fills: 2
+SIG: 4205319 hits: 3 fills: 3 hits/fills: 1
+SIG: 4205332 hits: 2 fills: 2 hits/fills: 1
+SIG: 4205349 hits: 1 fills: 2 hits/fills: 0
+SIG: 4205353 hits: 1 fills: 1 hits/fills: 1
+SIG: 4205366 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205370 hits: 1 fills: 1 hits/fills: 1
+SIG: 4205387 hits: 2 fills: 2 hits/fills: 1
+SIG: 4205391 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205408 hits: 1 fills: 2 hits/fills: 0
+SIG: 4205412 hits: 1 fills: 3 hits/fills: 0
+SIG: 4205433 hits: 1 fills: 2 hits/fills: 0
+SIG: 4205460 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205465 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205475 hits: 45 fills: 227 hits/fills: 0
+SIG: 4205480 hits: 27 fills: 178 hits/fills: 0
+SIG: 4205499 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205514 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205519 hits: 1 fills: 3 hits/fills: 0
+SIG: 4205553 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205558 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205697 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205728 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207242 hits: 10 fills: 10 hits/fills: 1
+SIG: 4207450 hits: 5 fills: 3 hits/fills: 1
+SIG: 4207456 hits: 5 fills: 3 hits/fills: 1
+SIG: 4207464 hits: 7 fills: 3 hits/fills: 2
+SIG: 4207470 hits: 6 fills: 2 hits/fills: 2
+SIG: 4207472 hits: 2 fills: 2 hits/fills: 1
+SIG: 4207477 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207552 hits: 237 fills: 67 hits/fills: 3
+SIG: 4207559 hits: 1648 fills: 334 hits/fills: 4
+SIG: 4207812 hits: 205 fills: 81 hits/fills: 2
+SIG: 4207818 hits: 744 fills: 394 hits/fills: 1
+SIG: 4208122 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208179 hits: 1 fills: 1 hits/fills: 1
+SIG: 4208312 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208427 hits: 2 fills: 0 hits/fills: 3
+SIG: 4208554 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208673 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208734 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208768 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208778 hits: 0 fills: 255 hits/fills: 0
+SIG: 4208787 hits: 3 fills: 16 hits/fills: 0
+SIG: 4208807 hits: 4 fills: 17 hits/fills: 0
+SIG: 4208839 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208875 hits: 0 fills: 23 hits/fills: 0
+SIG: 4208894 hits: 0 fills: 176 hits/fills: 0
+SIG: 4208899 hits: 0 fills: 2 hits/fills: 0
+SIG: 4208934 hits: 17 fills: 185 hits/fills: 0
+FILLS: 2048 HITS: 3053
+HITS/FILLS STATS: MAP_SIZE: 5
+0 28
+1 15
+2 9
+3 6
+4 2
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4205221 hits: 30 fills: 0 hits/fills: 31
+SIG: 4205225 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205234 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205247 hits: 15 fills: 0 hits/fills: 16
+SIG: 4205251 hits: 5 fills: 0 hits/fills: 6
+SIG: 4205264 hits: 21 fills: 0 hits/fills: 22
+SIG: 4205268 hits: 8 fills: 0 hits/fills: 9
+SIG: 4205281 hits: 9 fills: 0 hits/fills: 10
+SIG: 4205285 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205298 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205302 hits: 5 fills: 0 hits/fills: 6
+SIG: 4205315 hits: 10 fills: 0 hits/fills: 11
+SIG: 4205319 hits: 6 fills: 0 hits/fills: 7
+SIG: 4205332 hits: 12 fills: 0 hits/fills: 13
+SIG: 4205336 hits: 6 fills: 0 hits/fills: 7
+SIG: 4205349 hits: 9 fills: 0 hits/fills: 10
+SIG: 4205353 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205366 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205370 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205387 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205391 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205408 hits: 5 fills: 0 hits/fills: 6
+SIG: 4205412 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205429 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205433 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205460 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205475 hits: 45 fills: 0 hits/fills: 46
+SIG: 4205480 hits: 28 fills: 0 hits/fills: 29
+SIG: 4205499 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205504 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205553 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205577 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205582 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205592 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205655 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205697 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207242 hits: 7 fills: 0 hits/fills: 8
+SIG: 4207450 hits: 9 fills: 0 hits/fills: 10
+SIG: 4207456 hits: 5 fills: 0 hits/fills: 6
+SIG: 4207464 hits: 7 fills: 0 hits/fills: 8
+SIG: 4207470 hits: 5 fills: 0 hits/fills: 6
+SIG: 4207472 hits: 4 fills: 0 hits/fills: 5
+SIG: 4207477 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207552 hits: 149 fills: 0 hits/fills: 150
+SIG: 4207559 hits: 1591 fills: 0 hits/fills: 1592
+SIG: 4207676 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207683 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207695 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207812 hits: 224 fills: 0 hits/fills: 225
+SIG: 4207818 hits: 2274 fills: 0 hits/fills: 2275
+SIG: 4208122 hits: 4 fills: 0 hits/fills: 5
+SIG: 4208179 hits: 3 fills: 0 hits/fills: 4
+SIG: 4208304 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208382 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208673 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208778 hits: 308 fills: 0 hits/fills: 309
+SIG: 4208787 hits: 17 fills: 0 hits/fills: 18
+SIG: 4208807 hits: 17 fills: 0 hits/fills: 18
+SIG: 4208875 hits: 0 fills: 155 hits/fills: 0
+SIG: 4208894 hits: 115 fills: 654 hits/fills: 0
+SIG: 4208934 hits: 480 fills: 326 hits/fills: 1
+SIG: 4208962 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209015 hits: 3 fills: 47 hits/fills: 0
+SIG: 4209024 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209034 hits: 0 fills: 123 hits/fills: 0
+SIG: 4209074 hits: 18 fills: 114 hits/fills: 0
+SIG: 4209088 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209153 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209217 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209282 hits: 0 fills: 1 hits/fills: 0
+SIG: 4209285 hits: 0 fills: 622 hits/fills: 0
+SIG: 4209299 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210642 hits: 2 fills: 0 hits/fills: 3
+FILLS: 2048 HITS: 5527
+HITS/FILLS STATS: MAP_SIZE: 24
+0 13
+1 1
+2 13
+3 6
+4 5
+5 4
+6 5
+7 2
+8 6
+9 1
+10 3
+11 1
+13 1
+16 1
+18 2
+22 1
+29 1
+31 1
+46 1
+150 1
+225 1
+309 1
+1592 1
+2275 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 3000002 cycles: 4930114 heartbeat IPC: 0.592922 cumulative IPC: 0.593682 (Simulation time: 0 hr 0 min 9 sec) 
+SIG: 4205475 hits: 160 fills: 0 hits/fills: 161
+SIG: 4205480 hits: 141 fills: 0 hits/fills: 142
+SIG: 4205519 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205558 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205592 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205631 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207552 hits: 6 fills: 0 hits/fills: 7
+SIG: 4207812 hits: 5 fills: 0 hits/fills: 6
+SIG: 4208312 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208382 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208778 hits: 128 fills: 0 hits/fills: 129
+SIG: 4208787 hits: 3 fills: 0 hits/fills: 4
+SIG: 4208807 hits: 2 fills: 0 hits/fills: 3
+SIG: 4208934 hits: 112 fills: 0 hits/fills: 113
+SIG: 4209074 hits: 48 fills: 0 hits/fills: 49
+SIG: 4209285 hits: 214 fills: 2047 hits/fills: 0
+SIG: 4209299 hits: 0 fills: 1 hits/fills: 0
+FILLS: 2048 HITS: 828
+HITS/FILLS STATS: MAP_SIZE: 11
+0 2
+2 3
+3 4
+4 1
+6 1
+7 1
+49 1
+113 1
+129 1
+142 1
+161 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4205475 hits: 315 fills: 0 hits/fills: 316
+SIG: 4205480 hits: 252 fills: 0 hits/fills: 253
+SIG: 4205514 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205519 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205553 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205592 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205631 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205697 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205728 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207242 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207450 hits: 4 fills: 0 hits/fills: 5
+SIG: 4207464 hits: 5 fills: 0 hits/fills: 6
+SIG: 4207470 hits: 3 fills: 0 hits/fills: 4
+SIG: 4207552 hits: 36 fills: 0 hits/fills: 37
+SIG: 4207812 hits: 81 fills: 0 hits/fills: 82
+SIG: 4208122 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208179 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208312 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208778 hits: 63 fills: 0 hits/fills: 64
+SIG: 4208807 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208875 hits: 77 fills: 0 hits/fills: 78
+SIG: 4208934 hits: 28 fills: 0 hits/fills: 29
+SIG: 4209074 hits: 41 fills: 0 hits/fills: 42
+SIG: 4209285 hits: 1842 fills: 2048 hits/fills: 0
+FILLS: 2048 HITS: 2766
+HITS/FILLS STATS: MAP_SIZE: 14
+0 1
+2 8
+3 1
+4 4
+5 1
+6 1
+29 1
+37 1
+42 1
+64 1
+78 1
+82 1
+253 1
+316 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4205475 hits: 601 fills: 0 hits/fills: 602
+SIG: 4205480 hits: 421 fills: 0 hits/fills: 422
+SIG: 4205514 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205519 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205553 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205558 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205592 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205631 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205697 hits: 6 fills: 0 hits/fills: 7
+SIG: 4205728 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207450 hits: 2 fills: 0 hits/fills: 3
+SIG: 4207464 hits: 2 fills: 0 hits/fills: 3
+SIG: 4207470 hits: 2 fills: 0 hits/fills: 3
+SIG: 4207552 hits: 135 fills: 0 hits/fills: 136
+SIG: 4207812 hits: 121 fills: 0 hits/fills: 122
+SIG: 4208122 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208179 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208304 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208427 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208734 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208778 hits: 10 fills: 0 hits/fills: 11
+SIG: 4208807 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208875 hits: 99 fills: 0 hits/fills: 100
+SIG: 4208934 hits: 4 fills: 0 hits/fills: 5
+SIG: 4209074 hits: 7 fills: 0 hits/fills: 8
+SIG: 4209285 hits: 5140 fills: 2048 hits/fills: 2
+SIG: 4209299 hits: 2 fills: 0 hits/fills: 3
+FILLS: 2048 HITS: 6576
+HITS/FILLS STATS: MAP_SIZE: 12
+2 10
+3 5
+4 2
+5 1
+7 1
+8 2
+11 1
+100 1
+122 1
+136 1
+422 1
+602 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 4000000 cycles: 6161860 heartbeat IPC: 0.811854 cumulative IPC: 0.637618 (Simulation time: 0 hr 0 min 12 sec) 
+SIG: 0 hits: 0 fills: 8 hits/fills: 0
+SIG: 4205221 hits: 14 fills: 3 hits/fills: 3
+SIG: 4205225 hits: 6 fills: 1 hits/fills: 3
+SIG: 4205234 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205247 hits: 16 fills: 0 hits/fills: 17
+SIG: 4205251 hits: 6 fills: 0 hits/fills: 7
+SIG: 4205264 hits: 19 fills: 0 hits/fills: 20
+SIG: 4205268 hits: 11 fills: 0 hits/fills: 12
+SIG: 4205281 hits: 5 fills: 1 hits/fills: 3
+SIG: 4205285 hits: 4 fills: 1 hits/fills: 2
+SIG: 4205298 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205302 hits: 5 fills: 1 hits/fills: 3
+SIG: 4205315 hits: 8 fills: 0 hits/fills: 9
+SIG: 4205319 hits: 8 fills: 0 hits/fills: 9
+SIG: 4205332 hits: 10 fills: 0 hits/fills: 11
+SIG: 4205336 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205349 hits: 5 fills: 0 hits/fills: 6
+SIG: 4205353 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205366 hits: 4 fills: 1 hits/fills: 2
+SIG: 4205370 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205387 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205391 hits: 4 fills: 1 hits/fills: 2
+SIG: 4205408 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205412 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205429 hits: 7 fills: 1 hits/fills: 4
+SIG: 4205433 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205460 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205465 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205475 hits: 346 fills: 81 hits/fills: 4
+SIG: 4205480 hits: 269 fills: 51 hits/fills: 5
+SIG: 4205499 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205504 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205514 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205519 hits: 0 fills: 1 hits/fills: 0
+SIG: 4205553 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205558 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205577 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205582 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205592 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205631 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205655 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205697 hits: 3 fills: 0 hits/fills: 4
+SIG: 4207149 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207242 hits: 16 fills: 16 hits/fills: 1
+SIG: 4207450 hits: 2 fills: 2 hits/fills: 1
+SIG: 4207456 hits: 6 fills: 0 hits/fills: 7
+SIG: 4207464 hits: 0 fills: 2 hits/fills: 0
+SIG: 4207470 hits: 1 fills: 1 hits/fills: 1
+SIG: 4207477 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207552 hits: 30 fills: 26 hits/fills: 1
+SIG: 4207559 hits: 1177 fills: 73 hits/fills: 15
+SIG: 4207676 hits: 2 fills: 0 hits/fills: 3
+SIG: 4207683 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207695 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207812 hits: 17 fills: 43 hits/fills: 0
+SIG: 4207818 hits: 1322 fills: 82 hits/fills: 15
+SIG: 4208019 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208122 hits: 1 fills: 3 hits/fills: 0
+SIG: 4208312 hits: 2 fills: 0 hits/fills: 3
+SIG: 4208382 hits: 2 fills: 0 hits/fills: 3
+SIG: 4208427 hits: 0 fills: 1 hits/fills: 0
+SIG: 4208554 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208734 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208778 hits: 3 fills: 254 hits/fills: 0
+SIG: 4208787 hits: 25 fills: 0 hits/fills: 26
+SIG: 4208807 hits: 24 fills: 0 hits/fills: 25
+SIG: 4208875 hits: 2 fills: 31 hits/fills: 0
+SIG: 4208894 hits: 349 fills: 82 hits/fills: 4
+SIG: 4208899 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208934 hits: 62 fills: 88 hits/fills: 0
+SIG: 4209015 hits: 0 fills: 421 hits/fills: 0
+SIG: 4209034 hits: 62 fills: 441 hits/fills: 0
+SIG: 4209074 hits: 25 fills: 179 hits/fills: 0
+SIG: 4209285 hits: 3574 fills: 150 hits/fills: 23
+SIG: 4209344 hits: 0 fills: 1 hits/fills: 0
+SIG: 4210642 hits: 1 fills: 0 hits/fills: 2
+FILLS: 2048 HITS: 7520
+HITS/FILLS STATS: MAP_SIZE: 17
+0 14
+1 4
+2 15
+3 10
+4 12
+5 7
+6 1
+7 2
+9 2
+11 1
+12 1
+15 2
+17 1
+20 1
+23 1
+25 1
+26 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 0 hits: 2 fills: 8 hits/fills: 0
+SIG: 4205221 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205225 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205247 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205264 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205268 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205281 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205298 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205302 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205332 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205353 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205387 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205408 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205433 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205460 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205465 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205475 hits: 194 fills: 0 hits/fills: 195
+SIG: 4205480 hits: 135 fills: 0 hits/fills: 136
+SIG: 4205514 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205519 hits: 5 fills: 0 hits/fills: 6
+SIG: 4205553 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205558 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205592 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205597 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205666 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205697 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207242 hits: 6 fills: 0 hits/fills: 7
+SIG: 4207450 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207456 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207464 hits: 2 fills: 0 hits/fills: 3
+SIG: 4207470 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207552 hits: 14 fills: 0 hits/fills: 15
+SIG: 4207559 hits: 107 fills: 0 hits/fills: 108
+SIG: 4207683 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207695 hits: 1 fills: 0 hits/fills: 2
+SIG: 4207812 hits: 28 fills: 0 hits/fills: 29
+SIG: 4207818 hits: 94 fills: 0 hits/fills: 95
+SIG: 4208122 hits: 3 fills: 0 hits/fills: 4
+SIG: 4208312 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208382 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208778 hits: 450 fills: 0 hits/fills: 451
+SIG: 4208787 hits: 7 fills: 0 hits/fills: 8
+SIG: 4208807 hits: 10 fills: 0 hits/fills: 11
+SIG: 4208894 hits: 29 fills: 0 hits/fills: 30
+SIG: 4208899 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208934 hits: 35 fills: 0 hits/fills: 36
+SIG: 4209015 hits: 269 fills: 55 hits/fills: 4
+SIG: 4209034 hits: 26 fills: 17 hits/fills: 1
+SIG: 4209074 hits: 162 fills: 15 hits/fills: 10
+SIG: 4209153 hits: 3 fills: 6 hits/fills: 0
+SIG: 4209271 hits: 0 fills: 6 hits/fills: 0
+SIG: 4209285 hits: 2206 fills: 1941 hits/fills: 1
+SIG: 4210642 hits: 1 fills: 0 hits/fills: 2
+FILLS: 2048 HITS: 3826
+HITS/FILLS STATS: MAP_SIZE: 19
+0 3
+1 2
+2 25
+3 5
+4 4
+6 1
+7 1
+8 1
+10 1
+11 1
+15 1
+29 1
+30 1
+36 1
+95 1
+108 1
+136 1
+195 1
+451 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 0 hits: 38 fills: 137 hits/fills: 0
+SIG: 4205221 hits: 54 fills: 0 hits/fills: 55
+SIG: 4205225 hits: 21 fills: 0 hits/fills: 22
+SIG: 4205234 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205247 hits: 31 fills: 0 hits/fills: 32
+SIG: 4205251 hits: 14 fills: 0 hits/fills: 15
+SIG: 4205264 hits: 34 fills: 0 hits/fills: 35
+SIG: 4205268 hits: 18 fills: 0 hits/fills: 19
+SIG: 4205281 hits: 23 fills: 0 hits/fills: 24
+SIG: 4205285 hits: 18 fills: 0 hits/fills: 19
+SIG: 4205298 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205302 hits: 14 fills: 0 hits/fills: 15
+SIG: 4205315 hits: 17 fills: 0 hits/fills: 18
+SIG: 4205319 hits: 14 fills: 0 hits/fills: 15
+SIG: 4205332 hits: 15 fills: 0 hits/fills: 16
+SIG: 4205336 hits: 9 fills: 0 hits/fills: 10
+SIG: 4205349 hits: 16 fills: 0 hits/fills: 17
+SIG: 4205353 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205366 hits: 5 fills: 0 hits/fills: 6
+SIG: 4205370 hits: 6 fills: 0 hits/fills: 7
+SIG: 4205387 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205391 hits: 9 fills: 0 hits/fills: 10
+SIG: 4205408 hits: 10 fills: 0 hits/fills: 11
+SIG: 4205412 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205429 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205433 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205460 hits: 4 fills: 0 hits/fills: 5
+SIG: 4205465 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205475 hits: 377 fills: 9 hits/fills: 37
+SIG: 4205480 hits: 240 fills: 6 hits/fills: 34
+SIG: 4205499 hits: 7 fills: 0 hits/fills: 8
+SIG: 4205504 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205514 hits: 1 fills: 1 hits/fills: 1
+SIG: 4205519 hits: 11 fills: 0 hits/fills: 12
+SIG: 4205553 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205558 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205577 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205582 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205592 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205597 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205631 hits: 2 fills: 0 hits/fills: 3
+SIG: 4205655 hits: 1 fills: 0 hits/fills: 2
+SIG: 4205666 hits: 3 fills: 0 hits/fills: 4
+SIG: 4205671 hits: 0 fills: 1 hits/fills: 0
+SIG: 4207242 hits: 4 fills: 3 hits/fills: 1
+SIG: 4207450 hits: 2 fills: 1 hits/fills: 1
+SIG: 4207456 hits: 14 fills: 0 hits/fills: 15
+SIG: 4207464 hits: 3 fills: 1 hits/fills: 2
+SIG: 4207470 hits: 3 fills: 1 hits/fills: 2
+SIG: 4207472 hits: 9 fills: 0 hits/fills: 10
+SIG: 4207477 hits: 5 fills: 0 hits/fills: 6
+SIG: 4207552 hits: 606 fills: 670 hits/fills: 0
+SIG: 4207559 hits: 3139 fills: 669 hits/fills: 4
+SIG: 4207676 hits: 3 fills: 0 hits/fills: 4
+SIG: 4207683 hits: 3 fills: 0 hits/fills: 4
+SIG: 4207695 hits: 3 fills: 0 hits/fills: 4
+SIG: 4207812 hits: 43 fills: 24 hits/fills: 1
+SIG: 4207818 hits: 2056 fills: 21 hits/fills: 93
+SIG: 4208019 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208312 hits: 3 fills: 0 hits/fills: 4
+SIG: 4208382 hits: 3 fills: 0 hits/fills: 4
+SIG: 4208427 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208554 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208778 hits: 46 fills: 0 hits/fills: 47
+SIG: 4208787 hits: 1 fills: 0 hits/fills: 2
+SIG: 4208807 hits: 2 fills: 0 hits/fills: 3
+SIG: 4208875 hits: 26 fills: 0 hits/fills: 27
+SIG: 4208894 hits: 743 fills: 0 hits/fills: 744
+SIG: 4208934 hits: 82 fills: 0 hits/fills: 83
+SIG: 4209015 hits: 109 fills: 0 hits/fills: 110
+SIG: 4209034 hits: 518 fills: 0 hits/fills: 519
+SIG: 4209074 hits: 175 fills: 0 hits/fills: 176
+SIG: 4209153 hits: 1 fills: 0 hits/fills: 2
+SIG: 4209285 hits: 5772 fills: 504 hits/fills: 11
+SIG: 4210642 hits: 3 fills: 0 hits/fills: 4
+FILLS: 2048 HITS: 14446
+HITS/FILLS STATS: MAP_SIZE: 32
+0 3
+1 4
+2 11
+3 7
+4 10
+5 1
+6 2
+7 1
+8 6
+10 3
+11 2
+12 1
+15 4
+16 1
+17 1
+18 1
+19 2
+22 1
+24 1
+27 1
+32 1
+34 1
+35 1
+37 1
+47 1
+55 1
+83 1
+93 1
+110 1
+176 1
+519 1
+744 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 5000002 cycles: 7213808 heartbeat IPC: 0.950619 cumulative IPC: 0.683549 (Simulation time: 0 hr 0 min 16 sec) 
+Heartbeat CPU 0 instructions: 6000002 cycles: 8161279 heartbeat IPC: 1.05544 cumulative IPC: 0.726965 (Simulation time: 0 hr 0 min 19 sec) 
+Heartbeat CPU 0 instructions: 7000000 cycles: 8996946 heartbeat IPC: 1.19665 cumulative IPC: 0.770811 (Simulation time: 0 hr 0 min 21 sec) 
+Heartbeat CPU 0 instructions: 8000000 cycles: 10404023 heartbeat IPC: 0.710693 cumulative IPC: 0.762645 (Simulation time: 0 hr 0 min 24 sec) 
+Heartbeat CPU 0 instructions: 9000002 cycles: 11743190 heartbeat IPC: 0.746734 cumulative IPC: 0.760824 (Simulation time: 0 hr 0 min 27 sec) 
+*** Reached end of trace for Core: 0 Repeating trace: trace/bzip2_10M.trace.gz
+Heartbeat CPU 0 instructions: 10000001 cycles: 13319725 heartbeat IPC: 0.634302 cumulative IPC: 0.745797 (Simulation time: 0 hr 0 min 29 sec) 
+Finished CPU 0 instructions: 10000001 cycles: 13383633 cummulative IPC: 0.747181 (Simulation time: 0 hr 0 min 30 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cummulative IPC: 0.747181 instructions: 10000001 cycles: 13383633
+LLC TOTAL     ACCESS:     105141  HIT:      81659  MISS:      23482
+LLC LOAD      ACCESS:      66659  HIT:      53650  MISS:      13009
+LLC RFO       ACCESS:      16747  HIT:       6444  MISS:      10303
+LLC PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+LLC WRITEBACK ACCESS:      21735  HIT:      21565  MISS:        170
