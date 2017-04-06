@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include <pair>
 
 #define NUM_CORE 1
 #define LLC_SETS NUM_CORE*2048
@@ -21,6 +20,7 @@
 #define AGING_PROB 32 //TODO: Parameter Tuning
 #define PROMOTION_PROB 64 //TODO: Parameter Tuning
 #define SKIP_BYPASS_PROB 10 //TODO: Parameter Tuning
+#define SRRIP_THRESHOLD (1/4.0) //TODO: Parameter Tuning
 #define DEBUG_ENABLED //Comment this out to remove debugging information
 
 #ifdef DEBUG_ENABLED
@@ -47,8 +47,6 @@ uint64_t NUM_FILLS=0;
 uint64_t NUM_HITS=0;
 uint64_t NUM_BYPASS=0;
 
-//Thresholds
-float SRRIP_THRESHOLD = 1/4.0;
 
 uint8_t rrpv[LLC_SETS][LLC_WAYS];
 SIG sig[LLC_SETS][LLC_WAYS];
@@ -73,7 +71,7 @@ map<SIG, ACCESS_STATS*> ATD;
 * VARIOUS AUXIALLIARY FUNCTIONS NECESSARY
 */
 
-map<int, pair<int,int> > hitFillStats;
+map<int, int> hitFillStats;
 void printAccessStats(){
   int fills=0, hits=0;
   for(map<SIG, ACCESS_STATS*>::iterator it = ATD.begin(); it!= ATD.end();it++){
@@ -124,23 +122,49 @@ void epochReset(){
 
 void setPolicyForNextEpoch(){
   if(NUM_HITS < SRRIP_THRESHOLD*NUM_HITS){
+    DEBUG("SRRIP ENABLED FOR NEXT EPOCH"<<endl);
     SRRIP_STATUS=1;
   }
   else{
+    DEBUG("SRRIP-POSITIONED ENABLED FOR NEXT EPOCH");
     SRRIP_STATUS=0;
   }
 }
 
+//This function is dependent on MAX_RRPV Value and is hardcoded
+//Hence has to be edited for different MAX_RRPV
 void calculateInsPositions(){
-  int hits, fills;
+  int hits, fills, hitsPerFill;
   for(map<SIG, ACCESS_STATS*>::iterator it = ATD.begin(); it!= ATD.end();it++){
     hits = it->second->hits;
     fills = it->second->fills;
+    hitsPerFill = (int)round((hits+1)/(fills+1));
     if(hits==0 && fills!=0){
       //RAND_BYPASS for all blocks with no hits
       it->second->INS_POS = MAX_INS_POS;
     }
-
+    switch(hitsPerFill){
+      case 0:
+        it->second->INS_POS=6;
+        break;
+      case 1:
+        it->second->INS_POS=5;
+        break;
+      case 2:
+        it->second->INS_POS=4;
+        break;
+      case 3:
+        it->second->INS_POS=3;
+        break;
+      case 4:
+        it->second->INS_POS=2;
+        break;
+      case 5:
+        it->second->INS_POS=1;
+        break;
+      default:
+        it->second->INS_POS=0;
+    }
   }
 }
 
@@ -148,26 +172,29 @@ void updateEpochState(){
   //Called on every EPOCH
   //TODO: Remember to smooth FILLS and HITS for various STATS
   //TODO: Understand the patterns through various stats stored in blah.txt and blah_err.txt to write this function
-  DEBUG("END OF AN EPOCH. CRUCHING STATS..."<<endl);
+  DEBUG("END OF AN EPOCH. CRUNCHING STATS..."<<endl);
   //Removing Dead Signatures
   removeDeadSignatures();
   printAccessStats();
   //TODO: Code to detect if we should go with SRRIP or POSITIONED-SRRIP for next EPOCH
   setPolicyForNextEpoch();
-  SRRIP_STATUS=1;
+  //Set to RUN ONLY SRRIP FOR DEBUGGING PURPOSES
+  //SRRIP_STATUS=1;
+  // static int temp = 0;
+  // temp++;
+  // if(temp == 16)exit(0);
   if(SRRIP_STATUS==0){
     calculateInsPositions();
   }
-  static int temp = 0;
-  temp++;
-  if(temp == 16)exit(0);
   epochReset();
 }
 
 void stepHitPromotion(uint32_t set, uint32_t way){
   //Consider applying the PROMOTION and AGING POLICIES on FILL Boundaries
   // or Consider the other possibilites here
-
+  if(ATD[sig[set][way]]==NULL){
+    ATD[sig[set][way]] = new ACCESS_STATS;
+  }
   //ABANDON RAND_BYPASS POLICY
   //TODO: Determine what to follow ABANDON RAND_BYPASS policy with very less SKIP_BYPASS_PROB or
   //ABANDON ABANDON_RAND_BYPASS and just proceed with some greater SKIP_BYPASS_PROB for that EPOCH
