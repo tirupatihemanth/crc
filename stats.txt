@@ -1,0 +1,15 @@
+1. 4098 epoch slightly better performance compared to 2048 epoch. But also worse sometimes => very close. 1024 also slightly worse.
+2. Obtained worst perf when we promote directly to MRU with PROMOTION_PROB = 1
+3. PROMOTING LESS THINGS TO THE MRU IS IMPROVING PERF
+4. PROMOTING TO MRU BUT WITH PROMOTION_PROB=64 IS BETTER with 194600 missess with LRU misses of 192744
+5. STEP PROMOTION WITH PROMOTION_PROB=64 and AGING_PROB=128 is better with 194546 misses
+5.1: same with epoch 4096 => 194567
+6. 194541 misses with same config as 5 but with SRRIP_THRESHOLD AS 0.5
+7. EPOCH SIZE 1024 SCREWED UP TO 194962
+8. PUT EXACT SRRIP_THRESHOLD TO 1 and screwed up to worst  244387
+9. RECORD PERF WITH SRRIP_THRESHOLD of 0.125 with 194315 misses 128, 64 =>aging, promotion.
+10. PERF REDUCED WITH SRRIP_THRESHOLD of 1/16 with 194382
+11. CONCLUSION: BETTER GO WITH SRRIP_THRESHOLD 0.125
+12. with 9. but aging 64, promotion 32 => slightly worse with 194539 misses
+13. with 12. aging 128, promotion 128 =>bad 196453 misses
+14. with 12. aging 64, promotion 128 =>better 194467

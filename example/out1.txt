@@ -1,0 +1,12 @@
+mynum: 4
+mymap[3]: 2
+argc: 1 argv[0]: ./a.out
+Betcha
+1491536997 1491536998
+2 3 2
+mynum: 
+mymap[3]: 2
+argc: 1 argv[0]: ./a.out
+Betcha
+1491536997 1491536998
+2 3 2

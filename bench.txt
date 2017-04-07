@@ -1,0 +1,10 @@
+GemsFDTD
+astar (BigLakes2048 input)
+cactusADM
+lbm
+leslie3d
+lib quantum
+mcf
+milc
+omnetpp
+soplex
