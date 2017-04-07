@@ -7,9 +7,10 @@ using namespace std;
 
 
 int main(int argc, char *argv[]){
-	uint8_t mynum=4;
-	cin>>mynum;
-	cout<<"mynum: "<<mynum<<endl;
+	uint32_t mynum1;
+	uint8_t mynum, mynum2;
+	cin>>mynum>>mynum1>>mynum2;
+	cout<<"mynum: "<<mynum<<"mynum1: "<<mynum1<<" mynum2: "<<mynum2<<endl;
 	srand(time(NULL));
 	map<int, int> mymap;
 	mymap[1] = 2;

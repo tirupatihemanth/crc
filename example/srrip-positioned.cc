@@ -35,11 +35,11 @@ uint32_t PROMOTION_PROB=64; //TODO: Parameter Tuning
 uint32_t SKIP_BYPASS_PROB=8; //TODO: Parameter Tuning
 float SRRIP_THRESHOLD=(1/8.0); //TODO: Parameter Tuning
 
-uint8_t SRRIP_STATUS=1;
-uint8_t RAND_AGING=1;
-uint8_t RAND_PROMOTION=1;
-uint8_t RAND_BYPASS=1;
-uint8_t ABANDON_RAND_BYPASS=1;
+uint32_t SRRIP_STATUS=1;
+uint32_t RAND_AGING=1;
+uint32_t RAND_PROMOTION=1;
+uint32_t RAND_BYPASS=1;
+uint32_t ABANDON_RAND_BYPASS=1;
 
 //Seeds for Random Number Generators
 uint32_t AGING_SEED;
@@ -287,6 +287,7 @@ void updateAccessStats(uint32_t set, uint32_t way, uint8_t hit){
 // initialize replacement state
 void InitReplacementState()
 {
+    //cin>>EPOCH_SIZE>>SRRIP_THRESHOLD>>SKIP_BYPASS_PROB>>AGING_PROB>>PROMOTION_PROB>>RAND_PROMOTION>>RAND_AGING>>ABANDON_RAND_BYPASS;
     DEBUG("****************CONFIGURATION AND PARAMETERS USED FOR THE RUN****************"<<endl);
     DEBUG("MAX_RRPV: "<<MAX_RRPV<<endl);
     DEBUG("EPOCH_SIZE: "<<EPOCH_SIZE<<endl);
