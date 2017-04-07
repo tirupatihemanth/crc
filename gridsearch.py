@@ -27,10 +27,10 @@ def waitForFinish():
 benchmarks = ["GemsFDTD", "lbm", "mcf", "omnetpp", "namd", "soplex", "bzip2", "gcc", "leslie3d", "hmmer", "h264ref"]
 
 for benchmark in benchmarks:
+	print "CURR RUNNING BENCHMARK: "+benchmark;
 	for file in files:
 		count = count+1;
-		print file+"\n";
-		print "count: "+str(count)+"\n";
+		print "CUR FILE: "+file+" count: "+str(count);
 		inFO = open(INPUT_PATH+file, "r");
 		outFO = open(OUTPUT_PATH+"out_"+file, "w");
 		errFO = open(ERR_PATH+"err_"+file, "w");
