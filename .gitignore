@@ -4,3 +4,4 @@ bin/
 lib/
 output/*
 err/
+output/bzip2/
