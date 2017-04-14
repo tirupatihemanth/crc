@@ -39,7 +39,7 @@ for benchmark in benchmarks:
 		outObjects.append(outFO);
 		errObjects.append(errFO);
 		inObjects.append(inFO);
-		if count==32:
+		if count==16:
 			waitForFinish();
 			count=0;
 	waitForFinish();

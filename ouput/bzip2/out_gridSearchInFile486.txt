@@ -1,0 +1,28 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 100000
+Simulation Instructions: 10000000
+Configuration: 1
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Channels: 1 Width: 64-bit Data Rate: 1600 MT/s
+
+CPU 0 runs /home1/phd/cs14d403/ChampSim_CRC2/trace/bzip2_10M.trace.gz
+
+Warmup complete CPU 0 instructions: 100002 cycles: 47840 (Simulation time: 0 hr 0 min 0 sec) 
+
+*** Reached end of trace for Core: 0 Repeating trace: /home1/phd/cs14d403/ChampSim_CRC2/trace/bzip2_10M.trace.gz
+Finished CPU 0 instructions: 10000000 cycles: 11647568 cummulative IPC: 0.858548 (Simulation time: 0 hr 0 min 53 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cummulative IPC: 0.858548 instructions: 10000000 cycles: 11647568
+LLC TOTAL     ACCESS:     108981  HIT:      85685  MISS:      23296
+LLC LOAD      ACCESS:      64227  HIT:      51931  MISS:      12296
+LLC RFO       ACCESS:      21623  HIT:      10812  MISS:      10811
+LLC PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+LLC WRITEBACK ACCESS:      23131  HIT:      22942  MISS:        189

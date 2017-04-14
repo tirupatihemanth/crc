@@ -1,0 +1,33 @@
+libquantum1 1781 <normal exit>
+libquantum2 2113 <normal exit>
+libquantum3 2129
+gcc3 2052
+GemsFDTD1 2053
+bzip21 2093 <normal exit>
+bzip22 2094 <normal exit>
+bzip23 2095 <normal exit>
+gcc1 2096
+gcc2 2097
+GemsFDTD2 2098
+GemsFDTD3 2099
+h264ref1 2100
+h264ref2 2101
+h264ref3 2102
+lbm1 2103
+lbm2 2104
+lbm3 2105
+leslie3d1 2106
+leslie3d2 2107
+leslie3d3 2108
+mcf1 2109
+mcf2 2110
+mcf3 2111
+namd1 2112
+namd2 2116
+namd3 2121
+omnetpp1 2122
+omnetpp2 2123
+omnetpp3 2124
+soplex1 2130
+soplex2 2131
+soplex3 2342

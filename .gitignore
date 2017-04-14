@@ -2,3 +2,5 @@ stats/
 trace/
 bin/
 lib/
+output/
+err/

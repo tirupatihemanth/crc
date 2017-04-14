@@ -30,7 +30,7 @@ const BLOCK *base_set = NULL;
 // return value should be 0 ~ 15 or 16 (bypass)
 uint32_t GetVictimInSet (uint32_t cpu, uint32_t set, const BLOCK *current_set, uint64_t PC, uint64_t paddr, uint32_t type)
 {
-  cout<< "cpu\t"<<cpu<<"\tset\t"<< set <<"\tpaddr\t"<<paddr<<"\tPC\t"<<PC<<"\ttype\t"<<type<<endl;
+  //cout<< "cpu\t"<<cpu<<"\tset\t"<< set <<"\tpaddr\t"<<paddr<<"\tPC\t"<<PC<<"\ttype\t"<<type<<endl;
     for (int i=0; i<LLC_WAYS; i++)
         if (lru[set][i] == (LLC_WAYS-1))
             return i;
