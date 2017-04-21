@@ -1,0 +1,147 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 100000
+Simulation Instructions: 10000000
+Configuration: 1
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Channels: 1 Width: 64-bit Data Rate: 1600 MT/s
+
+CPU 0 runs trace/libquantum_10M.trace.gz
+Initialize SRRIP state
+
+Warmup complete CPU 0 instructions: 100001 cycles: 30077 (Simulation time: 0 hr 0 min 0 sec) 
+
+SIG: 4210272 hits: 651 fills: 4094 INS_POS: 6 hits/fills: 0
+SIG: 4210278 hits: 0 fills: 1 INS_POS: 6 hits/fills: 0
+SIG: 4210283 hits: 0 fills: 1 INS_POS: 6 hits/fills: 0
+FILLS: 4096 HITS: 651
+HITS/FILLS STATS: MAP_SIZE: 1
+0 3
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 1000001 cycles: 330244 heartbeat IPC: 3.02807 cumulative IPC: 2.99833 (Simulation time: 0 hr 0 min 2 sec) 
+SIG: 4210272 hits: 3442 fills: 4096 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 3442
+HITS/FILLS STATS: MAP_SIZE: 1
+0 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4210272 hits: 4096 fills: 4096 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4096
+HITS/FILLS STATS: MAP_SIZE: 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 2000001 cycles: 663852 heartbeat IPC: 2.99753 cumulative IPC: 2.99791 (Simulation time: 0 hr 0 min 4 sec) 
+SIG: 4210272 hits: 4096 fills: 4096 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4096
+HITS/FILLS STATS: MAP_SIZE: 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4210272 hits: 4096 fills: 4096 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4096
+HITS/FILLS STATS: MAP_SIZE: 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 3000001 cycles: 1001367 heartbeat IPC: 2.96283 cumulative IPC: 2.98572 (Simulation time: 0 hr 0 min 6 sec) 
+SIG: 4210272 hits: 4096 fills: 4096 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4096
+HITS/FILLS STATS: MAP_SIZE: 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 0 hits: 0 fills: 1 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4094 fills: 4095 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4094
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 4000000 cycles: 1399360 heartbeat IPC: 2.5126 cumulative IPC: 2.84821 (Simulation time: 0 hr 0 min 8 sec) 
+SIG: 0 hits: 0 fills: 1 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4094 fills: 4095 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4094
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4210272 hits: 4096 fills: 4096 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4096
+HITS/FILLS STATS: MAP_SIZE: 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 5000001 cycles: 1876629 heartbeat IPC: 2.09526 cumulative IPC: 2.65359 (Simulation time: 0 hr 0 min 10 sec) 
+SIG: 0 hits: 0 fills: 7 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4082 fills: 4089 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4082
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 4210272 hits: 4096 fills: 4096 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4096
+HITS/FILLS STATS: MAP_SIZE: 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 6000001 cycles: 2405850 heartbeat IPC: 1.88957 cumulative IPC: 2.4834 (Simulation time: 0 hr 0 min 13 sec) 
+SIG: 0 hits: 0 fills: 2 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4092 fills: 4094 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4092
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 0 hits: 0 fills: 2 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4092 fills: 4094 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4092
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 7000001 cycles: 2971013 heartbeat IPC: 1.7694 cumulative IPC: 2.34619 (Simulation time: 0 hr 0 min 15 sec) 
+SIG: 0 hits: 0 fills: 1 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4094 fills: 4095 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4094
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 0 hits: 0 fills: 2 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4092 fills: 4094 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4092
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 8000000 cycles: 3549218 heartbeat IPC: 1.72949 cumulative IPC: 2.24487 (Simulation time: 0 hr 0 min 17 sec) 
+SIG: 0 hits: 0 fills: 1 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4094 fills: 4095 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4094
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 0 hits: 0 fills: 3 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4089 fills: 4093 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4089
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 9000001 cycles: 4123013 heartbeat IPC: 1.74278 cumulative IPC: 2.17448 (Simulation time: 0 hr 0 min 20 sec) 
+SIG: 0 hits: 0 fills: 3 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4091 fills: 4093 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4091
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+SIG: 0 hits: 0 fills: 5 INS_POS: 8 hits/fills: 0
+SIG: 4210272 hits: 4086 fills: 4091 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4086
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+*** Reached end of trace for Core: 0 Repeating trace: trace/libquantum_10M.trace.gz
+Heartbeat CPU 0 instructions: 10000001 cycles: 4699322 heartbeat IPC: 1.73518 cumulative IPC: 2.12026 (Simulation time: 0 hr 0 min 22 sec) 
+Finished CPU 0 instructions: 10000000 cycles: 4724115 cummulative IPC: 2.1168 (Simulation time: 0 hr 0 min 22 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cummulative IPC: 2.1168 instructions: 10000000 cycles: 4724115
+LLC TOTAL     ACCESS:     152914  HIT:      74828  MISS:      78086
+LLC LOAD      ACCESS:          0  HIT:          0  MISS:          0
+LLC RFO       ACCESS:      78114  HIT:         57  MISS:      78057
+LLC PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+LLC WRITEBACK ACCESS:      74800  HIT:      74771  MISS:         29

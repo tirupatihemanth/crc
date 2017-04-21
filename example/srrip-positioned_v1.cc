@@ -13,12 +13,12 @@
 #include <algorithm>
 
 #define NUM_CORE 1
-#define LLC_SETS NUM_CORE*2048
+#define LLC_SETS (NUM_CORE*2048)
 #define LLC_WAYS 16
 #define MAX_RRPV 7
 #define MAX_INS_POS 8
 
-#define DEBUG_ENABLED //Comment this out to remove debugging information
+//#define DEBUG_ENABLED //Comment this out to remove debugging information
 
 #ifdef DEBUG_ENABLED
 #define DEBUG(X) do {std:: cerr << X;} while(0)
@@ -31,15 +31,15 @@ typedef uint64_t SIG; //TODO: Appropriately typedef SIG to sufficient size ater 
 //LESSON_LEARNT Always better to define parameters as variables instead of MACROS
 uint32_t EPOCH_SIZE=2048; //TODO: Parameter Tuning Performing better
 uint32_t AGING_PROB=128; //TODO: Parameter Tuning
-uint32_t PROMOTION_PROB=64; //TODO: Parameter Tuning
-uint32_t SKIP_BYPASS_PROB=8; //TODO: Parameter Tuning
-float SRRIP_THRESHOLD=(1/8.0); //TODO: Parameter Tuning
+uint32_t PROMOTION_PROB=512; //TODO: Parameter Tuning
+uint32_t SKIP_BYPASS_PROB=32; //TODO: Parameter Tuning
+float SRRIP_THRESHOLD=(1/2.0); //TODO: Parameter Tuning
 
 uint32_t SRRIP_STATUS=1;
 uint32_t RAND_AGING=1;
-uint32_t RAND_PROMOTION=1;
+uint32_t RAND_PROMOTION=0;
 uint32_t RAND_BYPASS=1;
-uint32_t ABANDON_RAND_BYPASS=1;
+uint32_t ABANDON_RAND_BYPASS=0;
 
 //Seeds for Random Number Generators
 uint32_t AGING_SEED;
@@ -145,7 +145,8 @@ void calculateInsPositions(){
   for(map<SIG, ACCESS_STATS*>::iterator it = ATD.begin(); it!= ATD.end();it++){
     hits = it->second->hits;
     fills = it->second->fills;
-    hitsPerFill = (int)round((hits+1)/(fills+1));
+    hitsPerFill = (int)round((hits+1.0)/(fills+1));
+    //hitsPerFill = fills==0?hits:(int)round((hits*1.0)/fills);
     if(hits==0 && fills!=0){
       //RAND_BYPASS for all blocks with no hits
       it->second->INS_POS = MAX_INS_POS;
@@ -156,21 +157,23 @@ void calculateInsPositions(){
         case 0:
           it->second->INS_POS=6;
           break;
-        case 1:
-          it->second->INS_POS=4;
-          break;
-        case 2:
-          it->second->INS_POS=2;
-          break;
+        // Further improvement with only 6, 0 ins positions
+        // some improvement with only 6, 2, 0 ins positions
+        // case 1:
+        //   it->second->INS_POS=2;
+        //   break;
+        // case 2:
+        //   it->second->INS_POS=2;
+        //   break;
         // case 3:
         //   it->second->INS_POS=3;
         //   break;
         // case 4:
         //   it->second->INS_POS=2;
         //   break;
-        // case 5:
-        //   it->second->INS_POS=1;
-        //  break;
+        case 1:
+          it->second->INS_POS=1;
+         break;
         default:
           it->second->INS_POS=0;
       }
@@ -214,21 +217,7 @@ void stepHitPromotion(uint32_t set, uint32_t way){
     ATD[sig[set][way]]->INS_POS = MAX_RRPV-1; //TODO: Parameter Tuning Required. MAX_RRPV?
   }
 
-  //STEP HIT PROMOTION POLICY
-  //TODO: Think about multiple HIT PROMOTION POLICIES
-  if(RAND_PROMOTION==1 && rand_r(&PROMOTION_SEED)%PROMOTION_PROB==0){
-    DEBUG("RAND_PROMOTION FOR SIG: "<<sig[set][way]<<endl);
-    rrpv[set][way] = max(0, rrpv[set][way]-1);
-    //rrpv[set][way]=0;
-  }
-  else if(RAND_PROMOTION==0){
-    rrpv[set][way]=0;
-  }
-  else if(RAND_PROMOTION==2 && rand_r(&PROMOTION_SEED)%PROMOTION_PROB==0){
-    rrpv[set][way] = max(0, rrpv[set][way]-2);
-  }
-
-  //STEP HIT AGING POLICY
+    //STEP HIT AGING POLICY
   if(RAND_AGING==1 && rand_r(&AGING_SEED)%AGING_PROB==0){
     DEBUG("RAND_AGING FOR SIG: "<<sig[set][way]<<endl);
     for(int i=0;i<LLC_WAYS;i++){
@@ -249,7 +238,33 @@ void stepHitPromotion(uint32_t set, uint32_t way){
       }
     }
   }
-  
+  else if(RAND_AGING==3 && rand_r(&AGING_SEED)%AGING_PROB==0){
+    DEBUG("RAND_AGING FOR SIG: "<<sig[set][way]<<endl);
+    for(int i=0;i<LLC_WAYS;i++){
+      if(rrpv[set][way]==0)break;
+      if(rrpv[set][i] == rrpv[set][way]-1){
+        rrpv[set][i] = max((int)rrpv[set][i], 5);
+        assert(rrpv[set][i]<MAX_INS_POS);
+        break;
+      }
+    }
+  }
+
+
+  //STEP HIT PROMOTION POLICY
+  //TODO: Think about multiple HIT PROMOTION POLICIES
+  if(RAND_PROMOTION==1 && rand_r(&PROMOTION_SEED)%PROMOTION_PROB==0){
+    DEBUG("RAND_PROMOTION FOR SIG: "<<sig[set][way]<<endl);
+    rrpv[set][way] = max(0, rrpv[set][way]-1);
+    //rrpv[set][way]=0;
+  }
+  else if(RAND_PROMOTION==0){
+    rrpv[set][way]=0;
+    //rrpv[set][way] = max(0, rrpv[set][way]-4);
+  }
+  else if(RAND_PROMOTION==2 && rand_r(&PROMOTION_SEED)%PROMOTION_PROB==0){
+    rrpv[set][way] = max(0, rrpv[set][way]-2);
+  }
 }
 
 void positionedInsertion(SIG sig, uint32_t set, uint32_t way){
@@ -257,7 +272,7 @@ void positionedInsertion(SIG sig, uint32_t set, uint32_t way){
     // On each fill we insert based on the INS_POS calculated from the previous EPOCH for this sig
     assert(ATD[sig]->INS_POS <= MAX_INS_POS);
     if(ATD[sig]->INS_POS==MAX_INS_POS){
-      rrpv[set][way] = MAX_INS_POS-2;
+      rrpv[set][way] = MAX_INS_POS-1;
     }
     else{
       rrpv[set][way] = ATD[sig]->INS_POS;
@@ -266,6 +281,7 @@ void positionedInsertion(SIG sig, uint32_t set, uint32_t way){
 
 SIG getSignature(uint64_t PC){
   // TODO: Implement Better Signature Scheme.
+  //return 0x0;
   return PC;
 }
 

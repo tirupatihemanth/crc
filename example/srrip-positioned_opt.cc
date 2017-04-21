@@ -267,6 +267,7 @@ void positionedInsertion(SIG sig, uint32_t set, uint32_t way){
     //detect any hits for these signatures coming from non dedicated sets hence better forget their existence
     if(set%CONSTITUENCY_SIZE!=0 && ATD[sig]==NULL){
       rrpv[set][way] = MAX_RRPV-1;
+      return;
     }
 
     assert(ATD[sig]->INS_POS <= MAX_INS_POS);
@@ -283,10 +284,10 @@ SIG getSignature(uint64_t PC){
   //Using a Signature of size 14 bits
   //However using a cpp container of 16bits to store this 14 bits
   //14bit signature
-  //return PC & (0x3FFF);
+  return PC & (0x3FFF);
   //11bit signature
   //return PC & (0x7FF);
-  return PC;
+  //return PC;
 }
 
 void updateAccessStats(uint32_t set, uint32_t way, uint8_t hit){

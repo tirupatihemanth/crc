@@ -9,58 +9,68 @@ LLC sets: 2048
 LLC ways: 16
 Off-chip DRAM Channels: 1 Width: 64-bit Data Rate: 1600 MT/s
 
-CPU 0 runs trace/bzip2_100M.trace.gz
+CPU 0 runs trace/libquantum_10M.trace.gz
 Initialize SRRIP state
-SIG: 0 hits: 0 fills: 68
-SIG: 4231728 hits: 0 fills: 1
-SIG: 4231732 hits: 1652 fills: 1978
-SIG: 4231745 hits: 0 fills: 1
-FILLS: 2048 HITS: 1652
-SIG: 0 hits: 0 fills: 648
-SIG: 4231732 hits: 751 fills: 1400
-FILLS: 2048 HITS: 751
-SIG: 0 hits: 0 fills: 417
-SIG: 4231732 hits: 1214 fills: 1631
-FILLS: 2048 HITS: 1214
-SIG: 0 hits: 0 fills: 514
-SIG: 4231732 hits: 1020 fills: 1534
-FILLS: 2048 HITS: 1020
-SIG: 0 hits: 0 fills: 521
-SIG: 4231732 hits: 1008 fills: 1527
-FILLS: 2048 HITS: 1008
-SIG: 0 hits: 0 fills: 492
-SIG: 4231732 hits: 1063 fills: 1556
-FILLS: 2048 HITS: 1063
-SIG: 0 hits: 0 fills: 532
-SIG: 4231732 hits: 983 fills: 1516
-FILLS: 2048 HITS: 983
-SIG: 0 hits: 0 fills: 492
-SIG: 4231732 hits: 1065 fills: 1556
-FILLS: 2048 HITS: 1065
-SIG: 0 hits: 0 fills: 525
-SIG: 4231732 hits: 998 fills: 1523
-FILLS: 2048 HITS: 998
-SIG: 0 hits: 0 fills: 468
-SIG: 4231732 hits: 1112 fills: 1580
-FILLS: 2048 HITS: 1112
-SIG: 0 hits: 0 fills: 519
-SIG: 4231732 hits: 1010 fills: 1529
-FILLS: 2048 HITS: 1010
-SIG: 0 hits: 0 fills: 436
-SIG: 4231732 hits: 1175 fills: 1612
-FILLS: 2048 HITS: 1175
 
-Warmup complete CPU 0 instructions: 100004 cycles: 45868 (Simulation time: 0 hr 0 min 1 sec) 
+Warmup complete CPU 0 instructions: 100001 cycles: 30077 (Simulation time: 0 hr 0 min 0 sec) 
 
-SIG: 0 hits: 0 fills: 497
-SIG: 4231732 hits: 1055 fills: 1551
-FILLS: 2048 HITS: 1055
-SIG: 0 hits: 0 fills: 539
-SIG: 4231732 hits: 966 fills: 1509
-FILLS: 2048 HITS: 966
-SIG: 0 hits: 0 fills: 431
-SIG: 4231732 hits: 1188 fills: 1617
-FILLS: 2048 HITS: 1188
-SIG: 0 hits: 0 fills: 525
-SIG: 4231732 hits: 1000 fills: 1523
-FILLS: 2048 HITS: 1000
+Heartbeat CPU 0 instructions: 1000001 cycles: 330244 heartbeat IPC: 3.02807 cumulative IPC: 2.99833 (Simulation time: 0 hr 0 min 2 sec) 
+SIG: 15968 hits: 2729 fills: 4095 INS_POS: 1 hits/fills: 0
+SIG: 15974 hits: 0 fills: 1 INS_POS: 8 hits/fills: 0
+FILLS: 4096 HITS: 2729
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 2000001 cycles: 663852 heartbeat IPC: 2.99753 cumulative IPC: 2.99791 (Simulation time: 0 hr 0 min 4 sec) 
+Heartbeat CPU 0 instructions: 3000001 cycles: 1001193 heartbeat IPC: 2.96436 cumulative IPC: 2.98625 (Simulation time: 0 hr 0 min 6 sec) 
+SIG: 15968 hits: 4097 fills: 4096 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4097
+HITS/FILLS STATS: MAP_SIZE: 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 4000000 cycles: 1399819 heartbeat IPC: 2.50861 cumulative IPC: 2.84725 (Simulation time: 0 hr 0 min 9 sec) 
+SIG: 0 hits: 0 fills: 1 INS_POS: 8 hits/fills: 0
+SIG: 15968 hits: 4100 fills: 4095 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4100
+HITS/FILLS STATS: MAP_SIZE: 2
+0 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 5000001 cycles: 1878143 heartbeat IPC: 2.09064 cumulative IPC: 2.65142 (Simulation time: 0 hr 0 min 11 sec) 
+Heartbeat CPU 0 instructions: 6000001 cycles: 2409221 heartbeat IPC: 1.88296 cumulative IPC: 2.47988 (Simulation time: 0 hr 0 min 13 sec) 
+SIG: 0 hits: 0 fills: 7 INS_POS: 8 hits/fills: 0
+SIG: 15968 hits: 4076 fills: 4089 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4076
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 7000001 cycles: 2970235 heartbeat IPC: 1.78249 cumulative IPC: 2.34681 (Simulation time: 0 hr 0 min 16 sec) 
+SIG: 0 hits: 0 fills: 4 INS_POS: 8 hits/fills: 0
+SIG: 15968 hits: 4085 fills: 4092 INS_POS: 1 hits/fills: 0
+FILLS: 4096 HITS: 4085
+HITS/FILLS STATS: MAP_SIZE: 1
+0 2
+END HITS/FILLS STATS. CLEARING MAPS...
+Heartbeat CPU 0 instructions: 8000000 cycles: 3545812 heartbeat IPC: 1.73739 cumulative IPC: 2.24704 (Simulation time: 0 hr 0 min 18 sec) 
+Heartbeat CPU 0 instructions: 9000001 cycles: 4117945 heartbeat IPC: 1.74785 cumulative IPC: 2.17717 (Simulation time: 0 hr 0 min 21 sec) 
+SIG: 0 hits: 0 fills: 2 INS_POS: 8 hits/fills: 0
+SIG: 15968 hits: 4101 fills: 4094 INS_POS: 1 hits/fills: 1
+FILLS: 4096 HITS: 4101
+HITS/FILLS STATS: MAP_SIZE: 2
+0 1
+1 1
+END HITS/FILLS STATS. CLEARING MAPS...
+*** Reached end of trace for Core: 0 Repeating trace: trace/libquantum_10M.trace.gz
+Heartbeat CPU 0 instructions: 10000001 cycles: 4691867 heartbeat IPC: 1.7424 cumulative IPC: 2.12365 (Simulation time: 0 hr 0 min 23 sec) 
+Finished CPU 0 instructions: 10000000 cycles: 4716493 cummulative IPC: 2.12022 (Simulation time: 0 hr 0 min 23 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cummulative IPC: 2.12022 instructions: 10000000 cycles: 4716493
+LLC TOTAL     ACCESS:     152914  HIT:      74826  MISS:      78088
+LLC LOAD      ACCESS:          0  HIT:          0  MISS:          0
+LLC RFO       ACCESS:      78114  HIT:         58  MISS:      78056
+LLC PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+LLC WRITEBACK ACCESS:      74800  HIT:      74768  MISS:         32

@@ -13,7 +13,7 @@
 #include <algorithm>
 
 #define NUM_CORE 1
-#define LLC_SETS NUM_CORE*2048
+#define LLC_SETS (NUM_CORE*2048)
 #define LLC_WAYS 16
 #define MAX_RRPV 7
 #define MAX_INS_POS 8
