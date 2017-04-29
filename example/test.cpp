@@ -40,4 +40,12 @@ int main(int argc, char *argv[]){
 	vector<double> vec = vector<double>(3,4);
 	cout<<"pair: "<<pr.first<<" "<<pr.second<<endl;
 	cout<<"vec: "<<vec[0]<<endl;
+	cout<<"CPP ROUNDING: "<<round(0.5)<<endl;
+	cout<<"CPP ROUNDING: "<<round(1.5)<<endl;
+	cout<<"CPP ROUNDING: "<<round(2.5)<<endl;
+	cout<<"CPP ROUNDING: "<<round(3.5)<<endl;
+	cout<<"CPP ROUNDING: "<<round(4.5)<<endl;
+	uint32_t var = 0;
+	uint32_t blah = max(0,(int)(var-1));
+	cout<<"blah: "<<blah<<endl;	
 }

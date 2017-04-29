@@ -10,13 +10,9 @@
 #define NUM_CORE 1
 #define LLC_SETS NUM_CORE*2048
 #define LLC_WAYS 16
-#define EPOCH_SIZE 1024 //TODO: Parameter Tuning
 
 uint32_t lru[LLC_SETS][LLC_WAYS];
-uint64_t sig[LLC_SETS][LLC_WAYS];
 
-
-class
 // initialize replacement state
 void InitReplacementState()
 {
@@ -29,11 +25,12 @@ void InitReplacementState()
     }
 }
 
+const BLOCK *base_set = NULL;
 // find replacement victim
 // return value should be 0 ~ 15 or 16 (bypass)
 uint32_t GetVictimInSet (uint32_t cpu, uint32_t set, const BLOCK *current_set, uint64_t PC, uint64_t paddr, uint32_t type)
 {
-  cout<< "cpu\t"<<cpu<<"\tset\t"<< set <<"\tpaddr\t"<<paddr<<"\tPC\t"<<PC<<"\ttype\t"<<type<<endl;
+  //cout<< "cpu\t"<<cpu<<"\tset\t"<< set <<"\tpaddr\t"<<paddr<<"\tPC\t"<<PC<<"\ttype\t"<<type<<endl;
     for (int i=0; i<LLC_WAYS; i++)
         if (lru[set][i] == (LLC_WAYS-1))
             return i;
@@ -46,12 +43,6 @@ void UpdateReplacementState (uint32_t cpu, uint32_t set, uint32_t way, uint64_t 
 {
 //	cout<< "cpu\t"<<cpu<<"\tset\t"<< set <<"\tway\t"<< way <<"\tpaddr\t"<<paddr<<"\tPC\t"<<PC<< "\tvictim_addr\t"<< victim_addr << "\ttype\t"<<type<<"\thit\t"<<(int)hit<<endl;
     // update lru replacement state
-    if(hit){
-      HITS++;
-    }
-    else{
-      FILLS++;
-    }
     for (uint32_t i=0; i<LLC_WAYS; i++) {
         if (lru[set][i] < lru[set][way]) {
             lru[set][i]++;

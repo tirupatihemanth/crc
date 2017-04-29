@@ -25,7 +25,6 @@ void InitReplacementState()
     }
 }
 
-const BLOCK *base_set = NULL;
 // find replacement victim
 // return value should be 0 ~ 15 or 16 (bypass)
 uint32_t GetVictimInSet (uint32_t cpu, uint32_t set, const BLOCK *current_set, uint64_t PC, uint64_t paddr, uint32_t type)

@@ -2,6 +2,5 @@ stats/
 trace/
 bin/
 lib/
-output/*
+output/
 err/
-output/bzip2/

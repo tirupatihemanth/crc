@@ -15,8 +15,8 @@
 #define NUM_CORE 1
 #define LLC_SETS (NUM_CORE*2048)
 #define LLC_WAYS 16
-#define MAX_RRPV 7
-#define MAX_INS_POS 8
+#define MAX_LRU 15
+#define MAX_INS_POS LLC_WAYS
 
 //#define DEBUG_ENABLED //Comment this out to remove debugging information
 
@@ -29,13 +29,14 @@
 typedef uint64_t SIG; //TODO: Appropriately typedef SIG to sufficient size ater getSignature implementation
 
 //LESSON_LEARNT Always better to define parameters as variables instead of MACROS
+//Because we could always do a grid search over parameters if they are defined as variables
 uint32_t EPOCH_SIZE=4096; //TODO: Parameter Tuning Performing better
 uint32_t AGING_PROB=128; //TODO: Parameter Tuning
 uint32_t PROMOTION_PROB=1; //TODO: Parameter Tuning
 uint32_t SKIP_BYPASS_PROB=32; //TODO: Parameter Tuning
 float SRRIP_THRESHOLD=(1/2.0); //TODO: Parameter Tuning
 
-uint32_t SRRIP_STATUS=1;
+uint32_t LRU_STATUS=1;
 uint32_t RAND_AGING=3;
 uint32_t RAND_PROMOTION=1;
 uint32_t RAND_BYPASS=1;
@@ -52,7 +53,9 @@ uint64_t NUM_HITS=0;
 uint64_t NUM_BYPASS=0;
 
 
-uint8_t rrpv[LLC_SETS][LLC_WAYS];
+//uint8_t rrpv[LLC_SETS][LLC_WAYS];
+uint32_t lru[LLC_SETS][LLC_WAYS];
+
 SIG sig[LLC_SETS][LLC_WAYS];
 
 class ACCESS_STATS{
@@ -64,7 +67,7 @@ class ACCESS_STATS{
     ACCESS_STATS(){
       fills=0;
       hits=0;
-      INS_POS = MAX_RRPV-1; //Defaulted to distant SRRIP insertion position
+      INS_POS = 0; //Defaulted to MRU insertion position
     };
 };
 
@@ -130,12 +133,12 @@ void epochReset(){
 
 void setPolicyForNextEpoch(){
   if(NUM_HITS<(SRRIP_THRESHOLD*NUM_FILLS)){
-    DEBUG("SRRIP ENABLED FOR NEXT EPOCH"<<endl);
-    SRRIP_STATUS=1;
+    DEBUG("LRU ENABLED FOR NEXT EPOCH"<<endl);
+    LRU_STATUS=1;
   }
   else{
-    DEBUG("SRRIP-POSITIONED ENABLED FOR NEXT EPOCH"<<endl);
-    SRRIP_STATUS=0;
+    DEBUG("LRU-POSITIONED ENABLED FOR NEXT EPOCH"<<endl);
+    LRU_STATUS=0;
   }
 }
 
@@ -157,7 +160,7 @@ void calculateInsPositions(){
     else{
       switch(hitsPerFill){
         case 0:
-          it->second->INS_POS=6;
+          it->second->INS_POS= (MAX_INS_POS*3)/4;
           break;
         // Further improvement with only 6, 0 ins positions
         // some improvement with only 6, 2, 0 ins positions
@@ -174,7 +177,7 @@ void calculateInsPositions(){
         //   it->second->INS_POS=2;
         //   break;
         case 1:
-          it->second->INS_POS=1;
+          it->second->INS_POS= (MAX_INS_POS)/4;
          break;
         default:
           it->second->INS_POS=0;
@@ -194,11 +197,11 @@ void updateEpochState(){
   //Code to detect if we should go with SRRIP or POSITIONED-SRRIP for next EPOCH
   setPolicyForNextEpoch();
   //Set to RUN ONLY SRRIP FOR DEBUGGING PURPOSES
-  //SRRIP_STATUS=1;
+  //LRU_STATUS=1;
   // static int temp = 0;
   // temp++;
   // if(temp == 16)exit(0);
-  if(SRRIP_STATUS==0){
+  if(LRU_STATUS==0){
     calculateInsPositions();
   }
   //printAccessStats();
@@ -216,16 +219,18 @@ void stepHitPromotion(uint32_t set, uint32_t way){
   //ABANDON ABANDON_RAND_BYPASS and just proceed with some greater SKIP_BYPASS_PROB for that EPOCH
   if(ABANDON_RAND_BYPASS==1 && ATD[sig[set][way]]->INS_POS == MAX_INS_POS){
     DEBUG("ABANDONING RAND_BYPASS FOR SIG: "<<sig[set][way]<<endl);
-    ATD[sig[set][way]]->INS_POS = MAX_RRPV-1; //TODO: Parameter Tuning Required. MAX_RRPV?
+    ATD[sig[set][way]]->INS_POS = (MAX_INS_POS*3)/4; //TODO: Parameter Tuning Required. MAX_RRPV?
   }
 
     //STEP HIT AGING POLICY
   if(RAND_AGING==1 && rand_r(&AGING_SEED)%AGING_PROB==0){
     DEBUG("RAND_AGING FOR SIG: "<<sig[set][way]<<endl);
     for(int i=0;i<LLC_WAYS;i++){
-      if(rrpv[set][i] == rrpv[set][way]-1){
-        rrpv[set][i] = max(MAX_RRPV, rrpv[set][i]+1);
-        assert(rrpv[set][i]<MAX_INS_POS);
+      if(lru[set][i] == lru[set][way]-1){
+        lru[set][i] = lru[set][way];
+        lru[set][way]--;
+        assert(lru[set][i]<MAX_INS_POS);
+        assert(lru[set][way]>=0);
         break;
       }
     }
@@ -233,9 +238,15 @@ void stepHitPromotion(uint32_t set, uint32_t way){
   else if(RAND_AGING==2 && rand_r(&AGING_SEED)%AGING_PROB==0){
     DEBUG("RAND_AGING FOR SIG: "<<sig[set][way]<<endl);
     for(int i=0;i<LLC_WAYS;i++){
-      if(rrpv[set][i] == rrpv[set][way]-1){
-        rrpv[set][i] = min(MAX_RRPV, rrpv[set][i]+2);
-        assert(rrpv[set][i]<MAX_INS_POS);
+      if(lru[set][way]+1>MAX_LRU)break;
+      if(lru[set][i] == lru[set][way]-1){
+        for(uint32_t temp=0;temp<LLC_WAYS;temp++){
+          if(lru[set][temp] == lru[set][i]+2){
+            lru[set][temp] = lru[set][i];break;
+          }
+        }
+        lru[set][i] = lru[set][i]+2;
+        assert(lru[set][i]<MAX_INS_POS);
         break;
       }
     }
@@ -243,10 +254,15 @@ void stepHitPromotion(uint32_t set, uint32_t way){
   else if(RAND_AGING==3 && rand_r(&AGING_SEED)%AGING_PROB==0){
     DEBUG("RAND_AGING FOR SIG: "<<sig[set][way]<<endl);
     for(int i=0;i<LLC_WAYS;i++){
-      if(rrpv[set][way]==0)break;
-      if(rrpv[set][i] == rrpv[set][way]-1){
-        rrpv[set][i] = max((int)rrpv[set][i], 5);
-        assert(rrpv[set][i]<MAX_INS_POS);
+      if(lru[set][way]==0)break;
+      if(lru[set][way]-1 >= (MAX_INS_POS*3)/4)break;
+      if(lru[set][i] == lru[set][way]-1){
+        for(uint32_t temp=0;temp<LLC_WAYS;temp++){
+          if(lru[set][temp] == (MAX_INS_POS*3)/4){
+            lru[set][temp] = lru[set][i];break;}
+        }
+        lru[set][i] = (MAX_INS_POS*3)/4;
+        assert(lru[set][i]<MAX_INS_POS);
         break;
       }
     }
@@ -257,15 +273,45 @@ void stepHitPromotion(uint32_t set, uint32_t way){
   //TODO: Think about multiple HIT PROMOTION POLICIES
   if(RAND_PROMOTION==1 && rand_r(&PROMOTION_SEED)%PROMOTION_PROB==0){
     DEBUG("RAND_PROMOTION FOR SIG: "<<sig[set][way]<<endl);
-    rrpv[set][way] = max(0, rrpv[set][way]-1);
+
+    for (uint32_t i=0; i<LLC_WAYS; i++) {
+        if (lru[set][i] == lru[set][way]-1) {
+            lru[set][i]++;
+            lru[set][way]--;
+            if (lru[set][i] == LLC_WAYS)
+                assert(0);
+        }
+    }
+
+    //rrpv[set][way] = max(0, rrpv[set][way]-1);
     //rrpv[set][way]=0;
   }
   else if(RAND_PROMOTION==0){
-    rrpv[set][way]=0;
+    for (uint32_t i=0; i<LLC_WAYS; i++) {
+        if (lru[set][i] < lru[set][way]) {
+            lru[set][i]++;
+
+            if (lru[set][i] == LLC_WAYS)
+                assert(0);
+        }
+    }
+    lru[set][way] = 0;
+    //rrpv[set][way]=0;
     //rrpv[set][way] = max(0, rrpv[set][way]-4);
   }
   else if(RAND_PROMOTION==2 && rand_r(&PROMOTION_SEED)%PROMOTION_PROB==0){
-    rrpv[set][way] = max(0, rrpv[set][way]-2);
+    //NOT IMPLEMENTED. RAISE AN EXCEPTION
+    assert(0);
+    // for (uint32_t i=0; i<LLC_WAYS; i++) {
+    //     if (lru[set][i] == lru[set][way]-2) {
+    //         lru[set][i]+=2;
+
+    //         if (lru[set][i] == LLC_WAYS)
+    //             assert(0);
+    //     }
+    // }
+    // lru[set][way] = max(0, (int)(lru[set][way]-2));
+    //rrpv[set][way] = max(0, rrpv[set][way]-2);
   }
 }
 
@@ -274,10 +320,20 @@ void positionedInsertion(SIG sig, uint32_t set, uint32_t way){
     // On each fill we insert based on the INS_POS calculated from the previous EPOCH for this sig
     assert(ATD[sig]->INS_POS <= MAX_INS_POS);
     if(ATD[sig]->INS_POS==MAX_INS_POS){
-      rrpv[set][way] = MAX_RRPV;
+      for(uint32_t i=0;i<LLC_WAYS;i++){
+        if(lru[set][i]>=(MAX_INS_POS*3)/4){
+          lru[set][i]++;
+        }
+      }
+      lru[set][way] = (MAX_INS_POS*3)/4;
     }
     else{
-      rrpv[set][way] = ATD[sig]->INS_POS;
+      for(uint32_t i=0;i<LLC_WAYS;i++){
+        if(lru[set][i]>=ATD[sig]->INS_POS){
+          lru[set][i]++;
+        }
+      }
+      lru[set][way] = ATD[sig]->INS_POS;
     }
 }
 
@@ -329,7 +385,7 @@ void InitReplacementState()
 
     for (int i=0; i<LLC_SETS; i++) {
         for (int j=0; j<LLC_WAYS; j++) {
-            rrpv[i][j] = MAX_RRPV;
+            lru[i][j] = j;
         }
     }
 }
@@ -341,19 +397,14 @@ uint32_t GetVictimInSet (uint32_t cpu, uint32_t set, const BLOCK *current_set, u
 
     //Cache Bypassing
     //LLC Bypassing for WRITEBACKs is not allowed!!!
-    if(SRRIP_STATUS==0 && type!=WRITEBACK && RAND_BYPASS==1 && rand_r(&SKIP_BYPASS_SEED)%SKIP_BYPASS_PROB!=0 && ATD[getSignature(PC)]!=NULL && ATD[getSignature(PC)]->INS_POS == MAX_INS_POS){
+    if(LRU_STATUS==0 && type!=WRITEBACK && RAND_BYPASS==1 && rand_r(&SKIP_BYPASS_SEED)%SKIP_BYPASS_PROB!=0 && ATD[getSignature(PC)]!=NULL && ATD[getSignature(PC)]->INS_POS == MAX_INS_POS){
       DEBUG("BYPASSING CACHE FOR SIG: " << getSignature(PC) << endl);
       return LLC_WAYS;
     }
     // look for the MAX_RRPV line
-    while (1)
-    {
-        for (int i=0; i<LLC_WAYS; i++)
-            if (rrpv[set][i] == MAX_RRPV)
-                return i;
-
-        for (int i=0; i<LLC_WAYS; i++)
-            rrpv[set][i]++;
+    for(int i=0;i<LLC_WAYS;i++){
+      if(lru[set][i]== (LLC_WAYS-1))
+        return i;
     }
 
     // WE SHOULD NOT REACH HERE
@@ -367,8 +418,16 @@ void UpdateReplacementState (uint32_t cpu, uint32_t set, uint32_t way, uint64_t 
     DEBUG("PC: "<<PC<<" CACHE HIT STATUS: "<<(int)hit<<"  set: "<<set<<" way: "<<way<<" type: "<<type<<endl);
     if (hit){
       NUM_HITS++;
-      if(SRRIP_STATUS){
-        rrpv[set][way] = 0;
+      if(LRU_STATUS){
+        for(uint32_t i=0;i<LLC_WAYS;i++){
+          if(lru[set][i] < lru[set][way]){
+            lru[set][i]++;
+
+            if(lru[set][i] == LLC_WAYS)
+              assert(0);
+          }
+        }
+        lru[set][way] = 0;
       }
       else{
         stepHitPromotion(set, way);
@@ -384,8 +443,16 @@ void UpdateReplacementState (uint32_t cpu, uint32_t set, uint32_t way, uint64_t 
         ATD[getSignature(PC)] = new ACCESS_STATS;
       }
       sig[set][way] = getSignature(PC);
-      if(SRRIP_STATUS){
-        rrpv[set][way] = MAX_RRPV-1;
+      if(LRU_STATUS){
+        for(uint32_t i=0;i<LLC_WAYS;i++){
+          if(lru[set][i] < lru[set][way]){
+            lru[set][i]++;
+
+            if(lru[set][i] == LLC_WAYS)
+              assert(0);
+          }
+        }
+        lru[set][way] = 0; //INSERTING AT MRU
       }
       else{
         positionedInsertion(getSignature(PC), set, way);
